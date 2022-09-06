@@ -38,13 +38,18 @@ app.get('/users', (req, res) => {
 })
 
 app.get('/users/:id', (req, res) => {
-    const id = req.params.id // req comes with property 'params'
+    const id = req.params.id // req comes with object 'params'
     for (let user of users){
         if (user.id == id){
             res.render('user', { user })
         }
     }
     res.send({error: `User with id ${id} does not exist`})
+})
+
+app.get('/test/:testId/:testName/:abc/:xyz', (req, res) => {
+    console.log(req.params)
+    res.send('Test')
 })
 
 
