@@ -11,12 +11,30 @@ app.set('view engine', 'ejs')
 // has methods, get, post, put, delete
 // two arguments, url and callback function(two arguments as well, will always be request and response)
 app.get('/', (req, res) => { 
-    res.render('index', {firstName: 'Brian'}) // can take in props that can be used in ejs file being rendered 'index'
+    res.render('index', { firstName: 'Brian', lastName: 'Stanton' }) // can take in props that can be used in ejs file being rendered 'index'
 }) 
 
 
-app.get('/abc', (req, res) => {
-    res.send('ABC!')
+let users = [
+    {
+        id: 1,
+        username: 'brian',
+        age: 55
+    },
+    {
+        id: 2,
+        username: 'tatyana',
+        age: 34
+    },
+    {
+        id: 3,
+        username: 'ripal',
+        age: 38
+    }
+]
+
+app.get('/users', (req, res) => {
+    res.render('users', { users })
 })
 
 

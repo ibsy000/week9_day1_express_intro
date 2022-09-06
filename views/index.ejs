@@ -11,15 +11,16 @@
         <title>Title</title>
     </head>
     <body>
+
         <h2>Hello this is the index</h2>
         <% if (locals.firstName) { %>
-            <h4>Welcome <%= locals.firstName %></h4>
+            <h4>Welcome <%= locals.firstName %> <%= locals.lastName %> </h4>
         <% } else { %>
             <h4>Welcome, please sign up</h4>
         <% } %>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
     </body>
 </html>
