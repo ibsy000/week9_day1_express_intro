@@ -37,6 +37,16 @@ app.get('/users', (req, res) => {
     res.render('users', { users })
 })
 
+app.get('/users/:id', (req, res) => {
+    const id = req.params.id // req comes with property 'params'
+    for (let user of users){
+        if (user.id == id){
+            res.render('user', { user })
+        }
+    }
+    res.send({error: `User with id ${id} does not exist`})
+})
+
 
 app.listen(port, () => {
     console.log(`Hello World app listening on port ${port}`)
